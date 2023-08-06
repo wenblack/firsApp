@@ -1,21 +1,38 @@
-import { StatusBar } from "expo-status-bar"
-import { Text, TextInput, View, TouchableOpacity, FlatList } from "react-native"
+import { Text, TextInput, View, TouchableOpacity, FlatList, Alert } from "react-native"
 import { styles } from "./styles"
 import { Participant } from "../../components/Participants"
+import { useState } from "react"
 
 export function Home() {
   const peoples = ['Wender', 'Rodrigo', 'Diego', 'Mayk', 'Steve Jobs', 'Michael Phelps']
+  const [newUser, setNewUser] = useState('')
+
+
+
+
+
 
   function handleParticipantAdd() {
-    console.log("Você clicou no botão de Adicionar!")
+    if (peoples.includes('Wender')) {
+      return Alert.alert('Participante já existe', 'Já existe um participante na lista com esse nome')
+    }
   }
 
-  function handleParticipantRemove() {
-    console.log("Você clicou no botão de Remover!")
+  function handleParticipantRemove(name: string) {
+    Alert.alert('Remover', `Tem certeza que deseja remover o participante ${name}?`, [
+      {
+        text: 'Sim',
+        onPress: () => Alert.alert('Deletado'),
+      },
+      {
+        text: 'Não',
+        style: 'cancel'
+      }
+
+    ])
   }
   return (
     <View style={styles.container}>
-      <StatusBar style="light"></StatusBar>
       <Text style={styles.eventName}>
         Nome do evento
       </Text>
@@ -42,7 +59,7 @@ export function Home() {
 
 
       <FlatList
-        data={[]}
+        data={peoples}
         keyExtractor={item => item}
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={() => (
@@ -52,7 +69,7 @@ export function Home() {
           <Participant
             name={item}
             key={index}
-            pressed={handleParticipantRemove}
+            pressed={() => handleParticipantRemove(item)}
           />
         )}
       />
