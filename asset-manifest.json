@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/firsApp/static/js/main.2751716f.js",
+    "static/js/745.f5e90f69.js": "/firsApp/static/js/745.f5e90f69.js",
+    "favicon.ico": "/firsApp/favicon.ico",
+    "index.html": "/firsApp/index.html",
+    "favicon-32.png": "/firsApp/favicon-32.png",
+    "favicon-16.png": "/firsApp/favicon-16.png",
+    "serve.json": "/firsApp/serve.json",
+    "manifest.json": "/firsApp/manifest.json",
+    "main.2751716f.js.map": "/firsApp/static/js/main.2751716f.js.map",
+    "745.f5e90f69.js.map": "/firsApp/static/js/745.f5e90f69.js.map"
+  },
+  "entrypoints": [
+    "static/js/745.f5e90f69.js",
+    "static/js/main.2751716f.js"
+  ]
+}
