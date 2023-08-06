@@ -42,5 +42,10 @@ export const styles = StyleSheet.create({
     marginBottom: 42,
     flexDirection: 'row',
     justifyContent: 'space-between'
+  },
+  listEmptyText: {
+    color: '#fff',
+    fontSize: 14,
+    textAlign: 'justify'
   }
 })
